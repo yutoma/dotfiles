@@ -1,5 +1,5 @@
-source ~/.config/git-completion.bash
-source ~/.config/git-prompt.sh
+source /home/ubuntu/.config/git-completion.bash
+source /home/ubuntu/.config/git-prompt.sh
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM=1
@@ -19,3 +19,5 @@ function share_history {
 PROMPT_COMMAND='share_history'
 shopt -u histappend
 export HISTSIZE=9999
+
+source "/home/ubuntu/.cargo/env"

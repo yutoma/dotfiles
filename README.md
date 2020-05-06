@@ -27,7 +27,7 @@ In `.vim/pack/plugins/start`:
 * [prabirshrestha/asyncomplete-lsp.vim](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git)
 * [prabirshrestha/asyncomplete.vim](https://github.com/prabirshrestha/asyncomplete.vim.git)
 * [prabirshrestha/vim-lsp](https://github.com/prabirshrestha/vim-lsp.git)
+* [preservim/nerdtree](https://github.com/preservim/nerdtree)
 * [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim.git)
 * [tpope/vim-repeat](https://github.com/tpope/vim-repeat.git)
 * [tpope/vim-surround](https://github.com/tpope/vim-surround.git)
-
