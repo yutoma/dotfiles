@@ -1,0 +1,14 @@
+#!/bin/sh -eux
+DIR=~/dotfiles
+URL=https://github.com/yutoma/dotfiles.git
+if [ -e "$DIR" ]; then
+    if [ "$(cd "$DIR"; git remote get-url origin)" = "$URL" ]; then
+        (cd "$DIR" && git checkout master && git pull)
+    else
+        echo "Error: Invalid $DIR" >/dev/stderr
+        exit 1
+    fi
+else
+    git clone --recursive --depth=1 "$URL" "$DIR"
+fi
+"$DIR/apply"

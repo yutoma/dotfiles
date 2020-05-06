@@ -1,0 +1,18 @@
+[alias]
+    st = status
+    br = branch
+    lo = log --graph --decorate
+    co = checkout
+    ci = commit
+    me = merge
+    di = diff
+    dic = diff --cached
+    did = diff -d
+    unstage = reset HEAD
+    ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+    discard-all = "!git clean -df && git reset --hard HEAD"
+[http]
+    sslVerify = false
+[user]
+    name = yutoma
+    email = yutoma@users.noreply.github.com
