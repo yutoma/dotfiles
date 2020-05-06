@@ -118,3 +118,17 @@ if executable('rls')
   autocmd FileType rust imap <expr> : ":\<C-X>\<C-O>"
 endif
 
+"let g:lsp_diagnostics_enabled = 1
+"scriptencoding utf-8
+function! s:on_lsp_buffer_enabled() abort
+  "setlocal omnifunc=lsp#complete
+  "setlocal signcolumn=yes
+  nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> gD <plug>(lsp-references)
+  nmap <buffer> gI <plug>(lsp-implementation)
+  nmap <buffer> <C-Q> <plug>(lsp-hover)
+  nmap <buffer> <F2> <plug>(lsp-rename)
+endfunction
+augroup lsp_install
+  au!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
