@@ -1,16 +1,20 @@
 #!/bin/sh -eux
-DIR=~/dotfiles
-mkdir -p ~/.config
-mkdir -p ~/.vim
-ln -sf "$DIR/.bashrc" ~/.bashrc
-ln -sf "$DIR/.config/bash_completion" ~/.config
-ln -sf "$DIR/.config/git-completion.bash" ~/.config
-ln -sf "$DIR/.config/git-prompt.sh" ~/.config
-ln -sf "$DIR/.ctags" ~/.ctags
-ln -sf "$DIR/.gitconfig" ~/.gitconfig
-ln -sf "$DIR/.inputrc" ~/.inputrc
-ln -sf "$DIR/.screenrc" ~/.screenrc
-ln -sf "$DIR/.tmux.conf" ~/.tmux.conf
-ln -sf "$DIR/.vim/pack" ~/.vim
-ln -sf "$DIR/.vimrc" ~/.vimrc
-exec $SHELL -l
+DIR=$HOME/dotfiles
+mkdir -p $HOME/.config
+mkdir -p $HOME/.vim
+ln -sf "$DIR/.config/bashrc.d" $HOME/.config
+ln -sf "$DIR/.config/ranger" $HOME/.config
+ln -sf "$DIR/.ctags" $HOME/.ctags
+ln -sf "$DIR/.gitconfig" $HOME/.gitconfig
+ln -sf "$DIR/.inputrc" $HOME/.inputrc
+ln -sf "$DIR/.screenrc" $HOME/.screenrc
+ln -sf "$DIR/.tmux.conf" $HOME/.tmux.conf
+ln -sf "$DIR/.vim/config" $HOME/.vim
+ln -sf "$DIR/.vimrc" $HOME/.vimrc
+sed -i --follow-symlinks -e :a -re 's/#\s*_dotfiles_start.*?#\s*_dotfiles_end//g;/#\s*_dotfiles_start/N;//ba' $HOME/.bashrc
+{
+    echo '# _dotfiles_start'
+    cat .bashrc_tail
+    echo '# _dotfiles_end'
+} >>$HOME/.bashrc
+exec "$SHELL" -l

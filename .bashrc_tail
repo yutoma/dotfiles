@@ -1,0 +1,6 @@
+if [ -d "$HOME/dotfiles/.config/bashrc.d" ]; then
+    for f in "$HOME"/dotfiles/.config/bashrc.d/*; do
+        # shellcheck disable=SC1090
+        . "$f"
+    done
+fi
