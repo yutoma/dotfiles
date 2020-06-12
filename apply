@@ -5,7 +5,6 @@ mkdir -p $HOME/.vim
 ln -sf "$DIR/.config/bashrc.d" $HOME/.config
 ln -sf "$DIR/.config/ranger" $HOME/.config
 ln -sf "$DIR/.ctags" $HOME/.ctags
-ln -sf "$DIR/.gitconfig" $HOME/.gitconfig
 ln -sf "$DIR/.inputrc" $HOME/.inputrc
 ln -sf "$DIR/.screenrc" $HOME/.screenrc
 ln -sf "$DIR/.tmux.conf" $HOME/.tmux.conf
@@ -17,4 +16,5 @@ sed -i --follow-symlinks -e :a -re 's/#\s*_dotfiles_start.*?#\s*_dotfiles_end//g
     cat .bashrc_tail
     echo '# _dotfiles_end'
 } >>$HOME/.bashrc
+git config --global include.path "$DIR/.gitconfig"
 exec "$SHELL" -l
