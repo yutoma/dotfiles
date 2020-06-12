@@ -1,11 +1,11 @@
 " Ale the linter
-call InstallGithubPlugin('dense-analysis', 'ale', 'start')
+PackGet 'dense-analysis/ale'
 " LSP
-call InstallGithubPlugin('prabirshrestha', 'async.vim', 'start')
-call InstallGithubPlugin('prabirshrestha', 'vim-lsp', 'start')
-call InstallGithubPlugin('mattn', 'vim-lsp-settings', 'start')
+PackGet 'prabirshrestha/async.vim'
+PackGet 'prabirshrestha/vim-lsp'
+PackGet 'mattn/vim-lsp-settings'
 " Completion
-call InstallGithubPlugin('prabirshrestha', 'asyncomplete.vim', 'start')
-call InstallGithubPlugin('prabirshrestha', 'asyncomplete-lsp.vim', 'start')
+PackGet 'prabirshrestha/asyncomplete.vim'
+PackGet 'prabirshrestha/asyncomplete-lsp.vim'
 " Editorconfig
-call InstallGithubPlugin('editorconfig', 'editorconfig-vim', 'start')
+PackGet 'editorconfig/editorconfig-vim'

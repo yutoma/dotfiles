@@ -1,6 +1,6 @@
-call InstallGithubPlugin('tpope', 'vim-surround', 'start')
-call InstallGithubPlugin('tpope', 'vim-repeat', 'start')
+PackGet 'tpope/vim-surround'
+PackGet 'tpope/vim-repeat'
 " Easy Align
-call InstallGithubPlugin('junegunn', 'vim-easy-align', 'start')
+PackGet 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
