@@ -1,5 +1,4 @@
 " behaviour when buffers switching
-set autochdir
 set autoread
 " buffer
 set hidden

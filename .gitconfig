@@ -14,5 +14,5 @@
 [http]
     sslVerify = false
 [user]
-    name = yutoma
-    email = yutoma@users.noreply.github.com
+#   name = yutoma
+#   email = yutoma@users.noreply.github.com
