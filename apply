@@ -1,20 +1,20 @@
 #!/bin/sh -eux
 DIR=$HOME/dotfiles
-mkdir -p $HOME/.config
-mkdir -p $HOME/.vim
-ln -sf "$DIR/.config/bashrc.d" $HOME/.config
-ln -sf "$DIR/.config/ranger" $HOME/.config
-ln -sf "$DIR/.ctags" $HOME/.ctags
-ln -sf "$DIR/.inputrc" $HOME/.inputrc
-ln -sf "$DIR/.screenrc" $HOME/.screenrc
-ln -sf "$DIR/.tmux.conf" $HOME/.tmux.conf
-ln -sf "$DIR/.vim/config" $HOME/.vim
-ln -sf "$DIR/.vimrc" $HOME/.vimrc
-sed -i --follow-symlinks -e :a -re 's/#\s*_dotfiles_start.*?#\s*_dotfiles_end//g;/#\s*_dotfiles_start/N;//ba' $HOME/.bashrc
+mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.vim"
+ln -sf "$DIR/.config/bashrc.d" "$HOME/.config"
+ln -sf "$DIR/.config/ranger" "$HOME/.config"
+ln -sf "$DIR/.ctags" "$HOME/.ctags"
+ln -sf "$DIR/.inputrc" "$HOME/.inputrc"
+ln -sf "$DIR/.screenrc" "$HOME/.screenrc"
+ln -sf "$DIR/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$DIR/.vim/config" "$HOME/.vim"
+sed -i --follow-symlinks -e :a -re 's/#\s*_dotfiles_start.*?#\s*_dotfiles_end//g;/#\s*_dotfiles_start/N;//ba' "$HOME/.bashrc"
 {
     echo '# _dotfiles_start'
     cat .bashrc_tail
     echo '# _dotfiles_end'
-} >>$HOME/.bashrc
+} >>"$HOME/.bashrc"
 git config --global include.path "$DIR/.gitconfig"
+grep -q 'runtime! config' "$HOME/.vimrc" || echo 'runtime! config/*.vim' >>"$HOME/.vimrc"
 exec "$SHELL" -l
