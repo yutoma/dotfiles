@@ -12,7 +12,7 @@ ln -sf "$DIR/.vim/config" "$HOME/.vim"
 sed -i --follow-symlinks -e :a -re 's/#\s*_dotfiles_start.*?#\s*_dotfiles_end//g;/#\s*_dotfiles_start/N;//ba' "$HOME/.bashrc"
 {
     echo '# _dotfiles_start'
-    cat "$HOME.bashrc_tail"
+    cat "$DIR/.bashrc_tail"
     echo '# _dotfiles_end'
 } >>"$HOME/.bashrc"
 git config --global include.path "$DIR/.gitconfig"
