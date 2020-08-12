@@ -1,0 +1,15 @@
+snippet cb "coder base"
+fn main() {
+    use std::io::Read;
+    let mut s = String::new();
+    std::io::stdin().read_to_string(&mut s).unwrap();
+    print!("{}", solve(&s));
+}
+fn solve(input: &str) -> i32 {
+    input
+}
+#[test]
+fn test() {
+    assert_eq!(solve("0 1 2"), 3);
+}
+endsnippet

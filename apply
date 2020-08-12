@@ -9,6 +9,7 @@ ln -sf "$DIR/.inputrc" "$HOME/.inputrc"
 ln -sf "$DIR/.screenrc" "$HOME/.screenrc"
 ln -sf "$DIR/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$DIR/.vim/config" "$HOME/.vim"
+ln -sf "$DIR/.vim/UltiSnips" "$HOME/.vim"
 sed -i --follow-symlinks -e :a -re 's/#\s*_dotfiles_start.*?#\s*_dotfiles_end//g;/#\s*_dotfiles_start/N;//ba' "$HOME/.bashrc"
 {
     echo '# _dotfiles_start'
