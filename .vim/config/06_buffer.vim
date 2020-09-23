@@ -5,4 +5,5 @@ set hidden
 set switchbuf=useopen
 " clipboard
 set clipboard=unnamed
-
+" save automatically
+set autowriteall
